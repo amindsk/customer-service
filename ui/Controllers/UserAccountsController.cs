@@ -11,19 +11,20 @@ namespace ui.Controllers
 {
     public class UserAccountsController : Controller
     {
+        //Auth0 login route
         public async Task Login(string returnUrl = "/Customers/Index")
         {
+            //Redirecting user to "Customer/Index" directly after login
             await HttpContext.ChallengeAsync("Auth0", new AuthenticationProperties() { RedirectUri = returnUrl });
         }
 
+        //Auth0 logout route
         [Authorize]
         public async Task Logout()
         {
             await HttpContext.SignOutAsync("Auth0", new AuthenticationProperties
             {
-                // Indicate here where Auth0 should redirect the user after a logout.
-                // Note that the resulting absolute Uri must be whitelisted in the
-                // **Allowed Logout URLs** settings for the app.
+                // Where Auth0 should redirect the user after a logout.
                 RedirectUri = Url.Action("Index", "Home")
             });
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

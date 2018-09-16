@@ -1,9 +1,13 @@
-var config = require('config');
-var firebase = require('firebase');
+//Importing dependencies
+const config = require('config');
+const firebase = require('firebase');
 
-var firebaseConfig = config.get('firebaseConfig');
+//Getting firebase configuration from default config
+const firebaseConfig = config.get('firebaseConfig');
+
+//Initializing firebase with default configuration
 firebase.initializeApp(firebaseConfig);
-var db = firebase.firestore();
+const db = firebase.firestore();
 db.settings({timestampsInSnapshots: true});
 
 module.exports = {

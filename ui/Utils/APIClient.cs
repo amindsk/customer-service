@@ -6,11 +6,16 @@ using RestSharp;
 
 namespace ui.Models
 {
+
+    //API Client utility to call API resources
     public class APIClient
     {
+        //Base URL of the API
         private string baseURL = "http://localhost:3000";
         private RestClient client;
         private RestRequest request;
+
+        //To get any URL of the API with access token in request header
         public List<Customer> GetRequest(string url, string token)
         {
             client = new RestClient(baseURL + url);
@@ -21,9 +26,12 @@ namespace ui.Models
             {
                 response = await GetResponseContentAsync(client, request) as RestResponse;
             }).Wait();
+
+            //Mapping data to Customer Model
             return JsonConvert.DeserializeObject<List<Customer>>(response.Content);
         }
 
+        //Asynchronously executing the request
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
         {
             var tcs = new TaskCompletionSource<IRestResponse>();

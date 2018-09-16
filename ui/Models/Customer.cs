@@ -2,6 +2,8 @@ using System;
 
 namespace ui.Models
 {
+
+    //Customer model to map list of customers fetched from API
     public class Customer
     {
         public string Name { get; set; }

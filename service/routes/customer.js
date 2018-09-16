@@ -1,15 +1,13 @@
-var dbCustomers = require('../db/customers');
+//Importing dependencies
+const dbCustomers = require('../db/customers');
 
-var { checkJwt } = require('../middleware/authenticate');
+const { checkJwt } = require('../middleware/authenticate');
 
 
+//Define all of the routes for customer service
+const customerRouter = function (app) {
 
-var appRouter = function (app) {
-    
-    app.get("/", (req, res) => {
-        res.status(200).send('Welcome');
-    });
-
+    //GET: customers with status Hot
     app.get("/customers", checkJwt, async (req, res) => {
         var customers = await dbCustomers.getCustomers();
         if(customers.length > 0) {
@@ -20,4 +18,4 @@ var appRouter = function (app) {
         }
     });
 }
-module.exports = appRouter;
+module.exports = customerRouter;

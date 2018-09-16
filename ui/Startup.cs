@@ -42,17 +42,17 @@ namespace ui
             .AddCookie()
             .AddOpenIdConnect("Auth0", options =>
             {
-                // Set the authority to your Auth0 domain
+                // Authority to my Auth0 domain
                 options.Authority = "https://amindsk.eu.auth0.com/";
 
-                // Configure the Auth0 Client ID and Client Secret
+                // Configuring the Auth0 Client ID and Client Secret
                 options.ClientId = "UhtSZyT2n5Yo9QvF8iqudban1ZxhoGSa";
                 options.ClientSecret = "cHchYDMY564rzS3c_HtyDRgYP7nGKWD6lYlvrvUTtkDVQcwAy0Z29xo227flY15u";
 
-                // Set response type to code
+                // Setting response type to code
                 options.ResponseType = "code";
 
-                // Configure the scope
+                // Configuring the scope
                 options.Scope.Clear();
                 options.Scope.Add("openid");
                 options.Scope.Add("profile");
@@ -64,19 +64,19 @@ namespace ui
                     RoleClaimType = "https://schemas.customers.com/roles"
                 };
 
-                // Set the callback path, so Auth0 will call back to http://localhost:5000/signin-auth0
-                // Also ensure that you have added the URL as an Allowed Callback URL in your Auth0 dashboard
+                // Setting the callback path, so Auth0 will call back to http://localhost:5000/signin-auth0
+                // URL has already added as an Allowed Callback URL in my Auth0 dashboard
                 options.CallbackPath = new PathString("/signin-auth0");
 
-                // Configure the Claims Issuer to be Auth0
+                // Configuring the Claims Issuer to be Auth0
                 options.ClaimsIssuer = "Auth0";
 
-                // Saves tokens to the AuthenticationProperties
+                // Saving tokens to the AuthenticationProperties
                 options.SaveTokens = true;
 
                 options.Events = new OpenIdConnectEvents
                 {
-                    // handle the logout redirection
+                    // Handling the logout redirection
                     OnRedirectToIdentityProviderForSignOut = (context) =>
                     {
                         var logoutUri = "https://amindsk.eu.auth0.com/v2/logout?client_id=UhtSZyT2n5Yo9QvF8iqudban1ZxhoGSa";
@@ -86,7 +86,7 @@ namespace ui
                         {
                             if (postLogoutUri.StartsWith("/"))
                             {
-                                // transform to absolute
+                                // Transforming to absolute
                                 var request = context.Request;
                                 postLogoutUri = request.Scheme + "://" + request.Host + request.PathBase + postLogoutUri;
                             }
@@ -107,11 +107,11 @@ namespace ui
                 };
             });
 
-            // Add framework services.
+            // Adding framework services.
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // Configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())

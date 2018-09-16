@@ -1,0 +1,54 @@
+body{
+    background: #cccccc;
+    font-family: ubuntu;
+}
+
+h1 {
+    text-align: center;
+}
+
+.customers{
+    background-color: white;
+    max-width: 960px;
+    margin: 30px auto;
+    padding:  20px 30px;
+    border-radius: 10px 120px 10px 10px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1)
+}
+
+#customers-list{
+    list-style-type: none;
+    padding: 0;
+}
+
+#customers-list li{
+    padding: 20px;
+    background: #f6f6f6;
+    font-size: 20px;
+    color: #555;
+    position: relative;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+#customers-list li:nth-child(even){
+    padding: 20px;
+    background: #f2f2f2;
+}
+
+#customers-list li span{
+    display: block;
+}
+
+.customer-detail{
+    font-size: 16px;
+    margin-top: 6px;
+    color: #999;
+}
+
+.customer-name{
+    font-weight: bold;
+    color: darkslategray;
+}
+.customer-status{
+    font-weight: bold;
+}

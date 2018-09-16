@@ -1,0 +1,11 @@
+{
+    "firebaseConfig": {
+        "apiKey": "AIzaSyCsKk6yvjAnFlfJg19bAd0PWiuV2Alu1Ag",
+        "authDomain": "customers-69f40.firebaseapp.com",
+        "databaseURL": "https://customers-69f40.firebaseio.com",
+        "projectId": "customers-69f40",
+        "storageBucket": "customers-69f40.appspot.com",
+        "messagingSenderId": "418240726251"
+    },
+    "apiPort": 3000
+}

@@ -34,6 +34,6 @@ All of the basic configuration of the service and the database is included in th
 * In new command prompt that you've open, navigate into **ui** directory of the project.
 * Type `dotnet restore` to restore project dependencies.
 * Type `dotnet run` and front end application will start running.
-* Now open your favourite browser and go to the following link [https://localhost:5001/].
+* Now open your favourite browser and go to the following link "https://localhost:5001/".
 
 You have successfully started the project on your local machine.

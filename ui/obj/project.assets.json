@@ -14014,11 +14014,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\customers\\ui\\ui.csproj",
+      "projectUniqueName": "F:\\customer-service\\ui\\ui.csproj",
       "projectName": "ui",
-      "projectPath": "F:\\customers\\ui\\ui.csproj",
+      "projectPath": "F:\\customer-service\\ui\\ui.csproj",
       "packagesPath": "C:\\Users\\satmap\\.nuget\\packages\\",
-      "outputPath": "F:\\customers\\ui\\obj\\",
+      "outputPath": "F:\\customer-service\\ui\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

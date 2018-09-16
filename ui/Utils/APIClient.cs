@@ -16,7 +16,7 @@ namespace ui.Models
         private RestRequest request;
 
         //To get any URL of the API with access token in request header
-        public List<Customer> GetRequest(string url, string token)
+        public RestResponse GetRequest(string url, string token)
         {
             client = new RestClient(baseURL + url);
             request = new RestRequest(Method.GET);
@@ -26,9 +26,7 @@ namespace ui.Models
             {
                 response = await GetResponseContentAsync(client, request) as RestResponse;
             }).Wait();
-
-            //Mapping data to Customer Model
-            return JsonConvert.DeserializeObject<List<Customer>>(response.Content);
+            return response;
         }
 
         //Asynchronously executing the request

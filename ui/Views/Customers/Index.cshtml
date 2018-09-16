@@ -1,20 +1,22 @@
 @{
     ViewData["Title"] = "Index";
 }
+
 @model IEnumerable<ui.Models.Customer>
 
-        <div class="customers">
-            <h1>Customers List</h1>
-            <ul id="customers-list">
-                @foreach(var customer in Model) {
-                    <li>
-                        <span class="customer-name">@customer.Name</span>
-                        <span class="customer-detail">Email: @customer.Email</span>
-                        <span class="customer-detail">Mobile: @customer.Mobile</span>
-                        <span class="customer-detail">Address: @customer.Address</span>
-                        <span class="customer-detail customer-status">Status: @customer.Status</span>
-                    </li>
-                }
-            </ul>
-
-        </div>
+@if(Model != null) {
+    <div class="customers">
+        <h1>Customers List</h1>
+        <ul id="customers-list">
+            @foreach(var customer in Model) {
+                <li>
+                    <span class="customer-name">@customer.Name</span>
+                    <span class="customer-detail">Email: @customer.Email</span>
+                    <span class="customer-detail">Mobile: @customer.Mobile</span>
+                    <span class="customer-detail">Address: @customer.Address</span>
+                    <span class="customer-detail customer-status">Status: @customer.Status</span>
+                </li>
+            }
+        </ul>
+    </div>
+}

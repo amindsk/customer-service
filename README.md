@@ -5,12 +5,12 @@ To showcase my skills in both of the technologies (**.Net Core** and **NodeJS**)
 * **ASP.Net Core MVC** at the front end to develop the UI of the project.
 * **NodeJS** along with **ExpressJS** to develop backend service of the project.
 * **Auth0** for authenticating and authorizing users.
-* **Firebase-Firrestore** to save all of the records of the customers.
+* **Firebase-Firestore** to save all of the records of the customers.
 
 ## Project Structure
 Project has two main parts
 ### UI
-UI of this project has been developed using ASP.Net Core MVC using Visual Atudio Code along with .NET Core 2.1 SDK.
+UI of this project has been developed using ASP.Net Core MVC using Visual Studio Code along with .NET Core 2.1 SDK.
 Project has 3 controllers *Home* to handle base URLs of the app which available publically, *UserAccounts* to handle login and logout routes through **Auth0** and *Customers* to handle private routes with the details of the customers.
 There are two main views of the project ***Index** view of **Home** Controller* which is the starting point of the application and publicaly available and other one is ***Index** view of **Customer** Controller* which is a private view and details of the customers is available on this view.
 There are two more views in the application **Login** and **Logout**, but these views are the default Auth0 views and handled by **UserAccounts** controller along with **Auth0**.
